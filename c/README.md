@@ -7,6 +7,8 @@ Optimerat så gott jag kan. Eftersom alla jämna tal över 2 stryks, så behöve
 Jag fick bäst resultat med tredje typen av optimiseringar, alla primtal upp till 1 miljard på 3,88s.
 62 MB ram :-)
 
+Mät med `/usr/bin/time -v exec`
+
 ```
  Command being timed: "./turbo3"
         User time (seconds): 3.88

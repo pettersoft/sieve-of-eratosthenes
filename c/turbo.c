@@ -25,20 +25,20 @@ int main() {
 
 	memset(arr, 0XFF, BYTES_REQUIRED);
 
-	for (unsigned int i = 0; (i*2 + 3) * (i * 2 + 3) <= TOTAL_RUNS ; i++) {
-		const unsigned int pos = i;
-		const unsigned int n = 2*i+3;
-		unsigned int arridx = pos / CHAR_BIT;
-		unsigned int bitpos = pos % CHAR_BIT;
+	for (unsigned long int i = 0; (i*2 + 3) * (i * 2 + 3) <= TOTAL_RUNS ; i++) {
+		const unsigned long int pos = i;
+		const unsigned long int n = 2*i+3;
+		unsigned long int arridx = pos / CHAR_BIT;
+		unsigned long int bitpos = pos % CHAR_BIT;
 		
 		unsigned char c1 = (arr[arridx] >> bitpos) & 1;
 		if (c1 == 1) {
-			const unsigned int start = n*n;
-			unsigned int precalc = (start-3) / 2;
-			for (unsigned int j = start; j < TOTAL_RUNS;) {
-				const unsigned int calc = precalc; 
-				unsigned int arridx2 = (calc) / CHAR_BIT;
-				unsigned int bitpos2 = (calc) % CHAR_BIT;
+			const unsigned long int start = n*n;
+			unsigned long int precalc = (start-3) / 2;
+			for (unsigned long int j = start; j < TOTAL_RUNS;) {
+				const unsigned long int calc = precalc; 
+				unsigned long int arridx2 = (calc) / CHAR_BIT;
+				unsigned long int bitpos2 = (calc) % CHAR_BIT;
 
 
 				arr[arridx2] &= ~(1u << bitpos2);
@@ -52,11 +52,11 @@ int main() {
 	}
 	// Kommentera in deh är koden för att skriva ut primtalen
 	/*
-	for (unsigned int i = 0; i < TOTAL_RUNS/2; i++) {	
-		unsigned int arridx = (i) / CHAR_BIT;
-		unsigned int bitpos = (i) % CHAR_BIT;
+	for (unsigned long int i = 0; i < TOTAL_RUNS/2; i++) {	
+		unsigned long int arridx = (i) / CHAR_BIT;
+		unsigned long int bitpos = (i) % CHAR_BIT;
 		unsigned char c1 = (arr[arridx] >> bitpos) & 1;
-		unsigned int n = i*2 + 3;
+		unsigned long int n = i*2 + 3;
 		printf("För %d är primtal = %d\n", n, c1);
 	}*/
 
